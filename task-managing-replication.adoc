@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-managing-replication.html 
 keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, source, destination, schedule, relationship, break, resync, max transfer, maximum transfer rate, rate, transfer rate, reverse resync, status, replication status, disaster recovery, DR, archive, archiving, retention 
-summary: 在两个系统之间设置数据复制后，您可以从NetApp Replication 管理数据复制计划和关系。 
+summary: 在两个系统之间设置数据复制后，您可以从NetApp Replication管理数据复制计划和关系。 
 ---
-= 在NetApp Replication 中管理数据复制
+= 在NetApp Replication中管理数据复制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,10 @@ summary: 在两个系统之间设置数据复制后，您可以从NetApp Replica
 
 
 [role="lead"]
-在两个系统之间设置数据复制后，您可以从NetApp Replication 管理数据复制计划和关系。
+在两个系统之间设置数据复制后，您可以从NetApp Replication管理数据复制计划和关系。
 
 .步骤
-. link:task-login-replication.html["登录到NetApp复制"] 。
+. link:task-login-replication.html["登录到NetApp Replication"] 。
 . 检查数据复制关系的状态以验证它们是否健康。
 +
 
@@ -66,4 +66,4 @@ NOTE: 当您重新同步卷时，目标卷上的内容将被源卷上的内容�
 
 
 .结果
-选择操作后， NetApp Replication 会更新关系或计划。
+选择操作后， NetApp Replication会更新关系或计划。

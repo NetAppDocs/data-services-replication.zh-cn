@@ -10,7 +10,7 @@ settings:
   langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
 sidebar:
   entries:
-  - title: NetApp复制文档
+  - title: NetApp Replication文档
     url: "/index.html"
   - title: 发行说明
     entries:
@@ -18,9 +18,9 @@ sidebar:
       url: "/whats-new.html"
   - title: 开始使用
     entries:
-    - title: 了解NetApp复制
+    - title: 了解NetApp Replication
       url: "/concept-replication.html"
-    - title: 登录到NetApp复制
+    - title: 登录到NetApp Replication
       url: "/task-login-replication.html"
     - title: 设置数据复制
       url: "/task-replicating-data.html"

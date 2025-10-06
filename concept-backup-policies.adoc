@@ -4,7 +4,7 @@ permalink: concept-backup-policies.html
 keywords: snapvault, archive, archiving, retention, replication, snapshots, volumes 
 summary: 与镜像策略不同，备份SnapVault策略将特定的快照副本复制到目标卷。如果您想使用自己的策略而不是默认策略，那么了解备份策略的工作原理非常重要。 
 ---
-= 了解NetApp Replication 中使用的备份策略
+= 了解NetApp Replication中使用的备份策略
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 与镜像策略不同，备份SnapVault策略将特定的快照副本�
 
 
 [role="lead"]
-与镜像策略不同，备份（SnapVault）策略使用NetApp Replication 将特定快照副本复制到目标卷。如果您想使用自己的策略而不是默认策略，那么了解备份策略的工作原理非常重要。
+与镜像策略不同，备份（SnapVault）策略使用NetApp Replication将特定快照副本复制到目标卷。如果您想使用自己的策略而不是默认策略，那么了解备份策略的工作原理非常重要。
 
 
 
@@ -32,7 +32,7 @@ image:diagram_replication_snapvault_policy.png["此图显示了快照策略、�
 
 == 默认策略和自定义策略
 
-默认快照策略会创建每小时、每天和每周的快照副本，并保留每小时 6 个、每天 2 个和每周 2 个快照副本。
+默认快照策略会创建每小时、每天和每周的快照副本，并保留 6 个每小时、2 个每天和 2 个每周的快照副本。
 
 您可以轻松地将默认备份策略与默认快照策略一起使用。默认备份策略复制每日和每周的快照副本，保留 7 个每日快照副本和 52 个每周快照副本。
 

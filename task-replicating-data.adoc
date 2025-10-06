@@ -4,7 +4,7 @@ permalink: task-replicating-data.html
 keywords: ontap, cluster, discover, manage, BlueXP, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, schedule, relationship, max transfer, maximum transfer rate, rate, transfer rate, intercluster lif, replication requirement, requirements, disaster recovery, DR, archive, archiving, retention, amazon fsx for ontap, fsx for ontap 
 summary: 您可以通过选择一次性数据复制进行数据传输，或选择定期计划进行灾难恢复或长期保留，在ONTAP系统之间复制数据。例如，您可以设置从本地ONTAP系统到Cloud Volumes ONTAP 的数据复制，以实现灾难恢复。 
 ---
-= 在NetApp Replication 中设置数据复制
+= 在NetApp Replication中设置数据复制
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -116,4 +116,4 @@ Amazon FSx for ONTAP的特定要求::
 
 
 .结果
-NetApp Replication 启动数据复制过程。您可以从NetApp Replication 查看有关卷关系的详细信息。
+NetApp Replication启动数据复制过程。您可以从NetApp Replication查看有关卷关系的详细信息。
