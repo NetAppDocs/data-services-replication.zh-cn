@@ -1,0 +1,87 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, releases' 
+summary: 了解NetApp Replication 的新功能。 
+---
+= NetApp Replication 的新功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+了解NetApp Replication 的新功能。
+
+
+
+== 2025年10月6日
+
+
+
+=== BlueXP replication现已更名为NetApp复制
+
+BlueXP replication已重命名为NetApp Replication。
+
+
+
+=== BlueXP现在是NetApp控制台
+
+NetApp控制台建立在增强和重组的BlueXP基础之上，可在企业级内部和云环境中集中管理NetApp存储和NetApp数据服务，提供实时洞察、更快的工作流程和简化的管理，并且高度安全且合规。
+
+有关更改的详细信息，请参阅link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp控制台发行说明"]。
+
+
+
+== 2022年9月18日
+
+
+
+=== FSx for ONTAP到Cloud Volumes ONTAP
+
+您现在可以将数据从Amazon FSx for ONTAP文件系统复制到Cloud Volumes ONTAP。
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["了解如何设置数据复制"] 。
+
+
+
+== 2022年7月31日
+
+
+
+=== FSx for ONTAP作为数据源
+
+您现在可以将数据从Amazon FSx for ONTAP文件系统复制到以下目标：
+
+* 适用于ONTAP 的Amazon FSx
+* 本地ONTAP集群
+
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["了解如何设置数据复制"] 。
+
+
+
+== 2021年9月2日
+
+
+
+=== 支持Amazon FSx for ONTAP
+
+您现在可以将数据从Cloud Volumes ONTAP系统或本地ONTAP集群复制到Amazon FSx for ONTAP文件系统。
+
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["了解如何设置数据复制"] 。
+
+
+
+== 2021年5月5日
+
+
+
+=== 重新设计的界面
+
+我们重新设计了复制功能，使其易于使用并匹配用户界面的当前外观和感觉。
+
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-replication/main/media/replication.gif["重新设计的“复制”选项卡的屏幕截图，其中显示了卷关系列表。"]

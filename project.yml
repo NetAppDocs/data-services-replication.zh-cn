@@ -1,0 +1,45 @@
+---
+settings:
+  name: NetApp Replication
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: zh-cn,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-tw
+sidebar:
+  entries:
+  - title: NetApp复制文档
+    url: "/index.html"
+  - title: 发行说明
+    entries:
+    - title: 什么是新的
+      url: "/whats-new.html"
+  - title: 开始使用
+    entries:
+    - title: 了解NetApp复制
+      url: "/concept-replication.html"
+    - title: 登录到NetApp复制
+      url: "/task-login-replication.html"
+    - title: 设置数据复制
+      url: "/task-replicating-data.html"
+  - title: 管理数据复制
+    url: "/task-managing-replication.html"
+  - title: 了解更多
+    entries:
+    - title: 了解复制策略
+      url: "/concept-replication-policies.html"
+    - title: 了解备份策略
+      url: "/concept-backup-policies.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/task-support-registration.html"
+    - title: 获取帮助
+      url: "/task-get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

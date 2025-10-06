@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: concept-replication-policies.html 
+keywords: replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, disaster recovery, DR 
+summary: 在NetApp控制台中设置数据复制时，您可能需要帮助选择复制策略。复制策略定义存储系统如何将数据从源卷复制到目标卷。 
+---
+= 了解NetApp Replication 中使用的复制策略
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在NetApp Replication 中设置数据复制时，您可能需要帮助选择复制策略。复制策略定义存储系统如何将数据从源卷复制到目标卷。
+
+
+
+== 复制策略的作用
+
+ONTAP操作系统会自动创建称为快照副本的备份。快照副本是卷的只读映像，可捕获某个时间点的文件系统状态。
+
+在系统之间复制数据时，您会将快照副本从源卷复制到目标卷。复制策略指定要从源卷复制到目标卷的快照副本。
+
+
+TIP: 复制策略也称为_保护_策略，因为它们由SnapMirror和SnapVault技术提供支持，这些技术提供灾难恢复保护和磁盘到磁盘的备份和恢复。
+
+下图显示了快照副本和复制策略之间的关系：
+
+image:diagram_replication_policies.png["此图显示了源卷上的快照副本以及指定将所有或特定快照副本从源卷复制到目标卷的复制策略。"]
+
+
+
+== 复制策略的类型
+
+复制策略有三种类型：
+
+* _镜像_策略将新创建的快照副本复制到目标卷。
++
+您可以使用这些快照副本来保护源卷，为灾难恢复或一次性数据复制做好准备。您可以随时激活目标卷以进行数据访问。
+
+* _备份_策略将特定的快照副本复制到目标卷，并且通常将其保留的时间比在源卷上保留的时间更长。
++
+当数据损坏或丢失时，您可以从这些快照副本中恢复数据，并保留它们以满足标准合规性和其他与治理相关的目的。
+
+* _镜像和备份_策略提供灾难恢复和长期保留。
++
+每个系统都包含一个默认的镜像和备份策略，适用于许多情况。如果您发现需要自定义策略，则可以使用系统管理器创建自己的策略。
+
+
+
+下图显示了镜像和备份策略之间的区别。镜像策略可镜像源卷上可用的快照副本。
+
+image:diagram_replication_snapmirror.png["此图显示了源卷上的快照副本以及镜像源卷的镜像目标卷。"]
+
+备份策略保留快照副本的时间通常比在源卷上保留的时间长：
+
+image:diagram_replication_snapvault.png["此图显示了源卷和备份目标卷上的快照副本，其中包含更多快照副本，因为SnapVault会保留快照副本以供长期保留。"]

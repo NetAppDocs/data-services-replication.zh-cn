@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: concept-replication.html 
+keywords: ontap, cluster, discover, manage, BlueXP, bluexp,hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, disaster recovery, DR, archive, archiving, retention, netapp replication 
+summary: NetApp SnapMirror通过 LAN 或 WAN 高速复制数据，因此您可以在虚拟和传统环境中获得高数据可用性和快速数据复制。当您将数据复制到NetApp存储系统并不断更新辅助数据时，您的数据将保持最新状态并在您需要时保持可用。不需要外部复制服务器。 
+---
+= 了解NetApp复制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp SnapMirror通过 LAN 或 WAN 高速复制数据，因此您可以在虚拟和传统环境中获得高数据可用性和快速数据复制。当您使用NetApp Replication 将数据复制到NetApp存储系统并不断更新二级数据时，您的数据将保持最新状态并在您需要时保持可用。不需要外部复制服务器。
+
+
+
+== NetApp控制台
+
+可通过NetApp控制台访问NetApp Replication。
+
+NetApp控制台提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
+
+您不需要许可证或订阅即可开始使用NetApp控制台，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
+
+详细了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"]。
+
+
+
+== 功能
+
+* 在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。
+* 通过高可用性确保您的 DR 环境的可靠性。
+* ONTAP存储之间的高效块级复制快速而高效，并具有用于 DR 和备份的细粒度恢复点。
+
+
+
+
+== 成本
+
+NetApp不会向您收取使用NetApp Replication 的费用，但您需要向您的云提供商检查适用的数据入口和出口费用。
+
+
+
+== 支持的系统
+
+NetApp Replication 支持以下类型的系统之间的数据复制。
+
+[cols="30,30"]
+|===
+| 源系统 | 支持的目标系统 
+
+
+| Cloud Volumes ONTAP  a| 
+* 适用于ONTAP 的Amazon FSx
+* Cloud Volumes ONTAP
+* 本地ONTAP集群
+
+
+
+
+| 本地ONTAP集群  a| 
+* 适用于ONTAP 的Amazon FSx
+* Cloud Volumes ONTAP
+* 本地ONTAP集群
+
+
+
+
+| 适用于ONTAP 的Amazon FSx  a| 
+* 适用于ONTAP 的Amazon FSx
+* Cloud Volumes ONTAP
+* 本地ONTAP集群
+
+
+|===
+
+
+== 数据复制的工作原理
+
+NetApp Replication 使用SnapMirror和SnapVault技术简化了不同ONTAP系统上的卷之间的数据复制。您只需识别源卷和目标卷，然后选择复制策略和计划。
+
+对于Cloud Volumes ONTAP， NetApp Replication 会购买所需的磁盘、配置关系、应用复制策略，然后启动卷之间的基线传输。
+
+
+NOTE: 基线传输包括源数据的完整副本。后续传输包含源数据的差异副本。
+
+
+
+== 支持的数据保护配置
+
+NetApp Replication 支持简单、扇出和级联数据保护配置：
+
+* 在简单的配置中，复制从卷 A 发生到卷 B。
+* 在扇出配置中，复制从卷 A 发生到多个目标。
+* 在级联配置中，复制从卷 A 发生到卷 B，再从卷 B 发生到卷 C。
+
+
+
+
+== 使用NetApp备份和恢复复制数据
+
+从NetApp控制台代理 3.9.31 版本开始， NetApp Backup and Recovery 允许您使用SnapMirror和SnapVault技术在单独的ONTAP系统上的卷之间复制数据。因此，如果您计划将数据复制到其他ONTAP系统，并且还希望将相同数据创建到对象存储的备份，则可能需要使用 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["NetApp备份和恢复"^]这样您就可以通过单一服务来管理您的数据保护需求。
+
+目前，以下功能仅在NetApp Replication 中受支持 - 使用NetApp Backup and Recovery 的复制功能时不受支持。
+
+* 不支持从卷 A 到卷 B，再从卷 B 到卷 C 的级联配置。
+* 不支持将数据复制到 FSx for ONTAP 系统或从 FSx for ONTAP系统复制数据。
+* 不支持创建卷的一次性复制。
+
+
+因此，如果您需要任何此功能，请使用NetApp Replication。
