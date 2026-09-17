@@ -16,7 +16,7 @@ summary: 使用NetApp Console登录到NetApp Replication。
 [role="lead"]
 使用NetApp Console登录到NetApp Replication。
 
-要登录控制台，您可以使用您的NetApp支持站点凭据，也可以使用您的电子邮件和密码注册NetApp云登录。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["了解有关登录的更多信息"^] 。
+要登录到 Console，您可以使用您的 NetApp 支持站点凭据，也可以使用您的电子邮件和密码注册 NetApp 云登录 https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["了解有关登录的更多信息"^]。
 
 .步骤
 . 打开 Web 浏览器并转到 https://console.netapp.com/["NetApp Console"^]。

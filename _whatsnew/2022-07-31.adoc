@@ -4,6 +4,7 @@
 
 
 
+[[fsx-for-ontap-as-the-data-source]]
 === FSx for ONTAP作为数据源
 
 您现在可以将数据从Amazon FSx for ONTAP文件系统复制到以下目标：
@@ -12,4 +13,4 @@
 * 本地ONTAP集群
 
 
-https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["了解如何设置数据复制"] 。
+link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["了解如何设置数据复制"]。

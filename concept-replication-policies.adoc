@@ -18,6 +18,7 @@ summary: 在NetApp Console中设置数据复制时，您可能需要帮助选择
 
 
 
+[[what-replication-policies-do]]
 == 复制策略的作用
 
 ONTAP操作系统会自动创建称为快照副本的备份。快照副本是卷的只读映像，可捕获某个时间点的文件系统状态。
@@ -33,6 +34,7 @@ image:diagram_replication_policies.png["此图显示了源卷上的快照副本�
 
 
 
+[[types-of-replication-policies]]
 == 复制策略的类型
 
 复制策略有三种类型：

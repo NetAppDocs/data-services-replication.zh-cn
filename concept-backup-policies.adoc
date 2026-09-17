@@ -18,6 +18,7 @@ summary: 与镜像策略不同，备份SnapVault策略将特定的快照副本�
 
 
 
+[[understanding-the-relationship-between-snapshot-copy-labels-and-backup-policies]]
 == 了解快照复制标签和备份策略之间的关系
 
 快照策略定义系统如何创建卷的快照副本。该策略指定何时创建快照副本、保留多少个副本以及如何标记它们。例如，系统可能每天凌晨 12:10 创建一个快照副本，保留最近的两个副本，并将其标记为“每日”。
@@ -30,6 +31,7 @@ image:diagram_replication_snapvault_policy.png["此图显示了快照策略、�
 
 
 
+[[default-policies-and-custom-policies]]
 == 默认策略和自定义策略
 
 默认快照策略会创建每小时、每天和每周的快照副本，并保留 6 个每小时、2 个每天和 2 个每周的快照副本。
