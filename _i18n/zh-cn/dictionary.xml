@@ -13,16 +13,12 @@
   <block id="57ff97c571d4da9035b6687a3eb97fea" category="paragraph">BlueXP replication已重命名为NetApp Replication。</block>
   <block id="bc2fe31b1e2682a9a79513d792e9c721" category="section-title">BlueXP现在是NetApp Console</block>
   <block id="2ef9d641d45afe99b74ad6f9a9f797ad" category="inline-link-macro">NetApp Console发行说明</block>
-  <block id="9b93e4b231bbb8d1c7051b84c23381d9" category="summary">与镜像策略不同，备份SnapVault策略将特定的快照副本复制到目标卷。如果您想使用自己的策略而不是默认策略，那么了解备份策略的工作原理非常重要。</block>
   <block id="13214bc1cee198bcd45ff3058afbe997" category="doc">了解NetApp Replication中使用的备份策略</block>
   <block id="d82a2dd63636d76c4ac7235ef9945089" category="paragraph">与镜像策略不同，备份（SnapVault）策略使用NetApp Replication将特定快照副本复制到目标卷。如果您想使用自己的策略而不是默认策略，那么了解备份策略的工作原理非常重要。</block>
   <block id="6df849e9b6a98751ab24134d77f38e40" category="section-title">了解快照复制标签和备份策略之间的关系</block>
   <block id="39254c75b5bfbd2872343b33d19fae8b" category="paragraph">快照策略定义系统如何创建卷的快照副本。该策略指定何时创建快照副本、保留多少个副本以及如何标记它们。例如，系统可能每天凌晨 12:10 创建一个快照副本，保留最近的两个副本，并将其标记为“每日”。</block>
-  <block id="2204cd649631fa42bda6fe0400aa1cd0" category="paragraph">备份策略包括指定将哪些标记的快照副本复制到目标卷以及保留多少份副本的规则。备份策略中定义的标签必须与快照策略中定义的一个或多个标签匹配。否则，系统无法复制任何快照副本。</block>
-  <block id="5bc7c9de27975c17950e7fb086105c6b" category="paragraph">例如，包含标签“每日”和“每周”的备份策略将导致复制仅包含这些标签的快照副本。没有复制其他快照副本，如下图所示：</block>
   <block id="078de5bc4b102703fbb5d5f16eab4ac5" category="section-title">默认策略和自定义策略</block>
   <block id="794c2bacad35583b2cc20bd0556629ce" category="paragraph">默认快照策略会创建每小时、每天和每周的快照副本，并保留 6 个每小时、2 个每天和 2 个每周的快照副本。</block>
-  <block id="a4d82668b58d9042d53ccaa4ade08011" category="paragraph">您可以轻松地将默认备份策略与默认快照策略一起使用。默认备份策略复制每日和每周的快照副本，保留 7 个每日快照副本和 52 个每周快照副本。</block>
   <block id="148658bf400475bd13a5edab6c870d2f" category="paragraph">如果您创建自定义策略，则这些策略定义的标签必须匹配。您可以使用系统管理器创建自定义策略。</block>
   <block id="4661e30f7eaa147cc461a5dc6e8c5f87" category="summary">在NetApp Console中设置数据复制时，您可能需要帮助选择复制策略。复制策略定义存储系统如何将数据从源卷复制到目标卷。</block>
   <block id="423248a990a1bbd53517291dce77b295" category="doc">了解NetApp Replication中使用的复制策略</block>
@@ -53,11 +49,9 @@
   <block id="85efdfd389ac173deb467cd0ea30bdbf" category="paragraph">NetApp SnapMirror通过 LAN 或 WAN 高速复制数据，因此您可以在虚拟和传统环境中获得高数据可用性和快速数据复制。当您使用NetApp Replication将数据复制到NetApp存储系统并不断更新二级数据时，您的数据将保持最新状态并在您需要时保持可用。不需要外部复制服务器。</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="section-title">NetApp Console</block>
   <block id="84082264837e9806d736236151badff0" category="paragraph">可以通过NetApp Console访问NetApp Replication 。</block>
-  <block id="7118a6b22768dabe4720d84710ea1e43" category="paragraph">您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
   <block id="4d8208136280cbaba3cab05e5996a3a8" category="list-text">在ONTAP存储系统之间复制数据，以支持到云或云之间的备份和灾难恢复。</block>
   <block id="58598c037819ab3e58b8ee6d0d634246" category="list-text">通过高可用性确保您的 DR 环境的可靠性。</block>
-  <block id="6c12db213eb53a8ef7d470254e0395be" category="list-text">ONTAP存储之间的高效块级复制快速而高效，并具有用于 DR 和备份的细粒度恢复点。</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">成本</block>
   <block id="688db5110be6c3b4687f322f866e3966" category="paragraph">NetApp不会向您收取使用NetApp Replication 的费用，但您需要向您的云提供商查询适用的数据入口和出口费用。</block>
   <block id="933247e0be7796a309cfa4c95bd34938" category="section-title">支持的系统</block>
@@ -67,7 +61,6 @@
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="cell">Cloud Volumes ONTAP</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
   <block id="b553c40a28c07760917a84d00649f7fd" category="section-title">数据复制的工作原理</block>
-  <block id="ab48329b04181ea1425540e3a6fe3fe5" category="paragraph">NetApp Replication使用SnapMirror和SnapVault技术简化了不同ONTAP系统上的卷之间的数据复制。您只需识别源卷和目标卷，然后选择复制策略和计划。</block>
   <block id="0a6e3d7b708a2efcacdf12db0f7ef453" category="paragraph">对于Cloud Volumes ONTAP， NetApp Replication会购买所需的磁盘、配置关系、应用复制策略，然后启动卷之间的基线传输。</block>
   <block id="f2c34e95577ee850c803e71a908cf1ef" category="admonition">基线传输包括源数据的完整副本。后续传输包含源数据的差异副本。</block>
   <block id="cc20b848be9552c96e9f46ed40db533d" category="section-title">支持的数据保护配置</block>
@@ -77,10 +70,6 @@
   <block id="7a850141034065e0218996db71a2ef0c" category="list-text">在级联配置中，复制从卷 A 发生到卷 B，再从卷 B 发生到卷 C。</block>
   <block id="e2a73062a43d971014e79321452e41d1" category="section-title">使用NetApp Backup and Recovery复制数据</block>
   <block id="cc6088539286339733631d73fb51774b" category="inline-link">NetApp Backup and Recovery</block>
-  <block id="e012112c73378e2a2d1fd1a0fa9c2795" category="list-text">不支持从卷 A 到卷 B，再从卷 B 到卷 C 的级联配置。</block>
-  <block id="baf48e0aa2c3928a76f5ae4cfa863af0" category="list-text">不支持将数据复制到 FSx for ONTAP 系统或从 FSx for ONTAP系统复制数据。</block>
-  <block id="0c23616cc33d59b54422397ae3ade277" category="list-text">不支持创建卷的一次性复制。</block>
-  <block id="bec0d307733399aa2dead652fbdca123" category="paragraph">因此，如果您需要任何此功能，请使用NetApp Replication。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
@@ -307,7 +296,6 @@
   <block id="12ad030c730fdc0c585b94ec9fbfc39b" category="paragraph">FSx for ONTAP 文件系统作为源或目标的复制关系管理现已在 NetApp Workload Factory 中。</block>
   <block id="0b1fa8def44610bb724d3d46f4ace772" category="paragraph"><block ref="0b1fa8def44610bb724d3d46f4ace772" category="inline-link-macro-rx"></block></block>
   <block id="1a90436cad6b2c834a6f0bf4b63bb676" category="paragraph">详细了解<block ref="185be9890bef04443cd0fba90b4aff11" category="inline-link-rx"></block>。</block>
-  <block id="8616ad02dd2f604f7d3987cf843781b5" category="paragraph">从 NetApp Console 代理 3.9.31 版本开始，NetApp Backup and Recovery 使您能够使用 SnapMirror 和 SnapVault 技术在不同 ONTAP 系统上的卷之间复制数据。因此，如果您计划将数据复制到其他 ONTAP 系统，并且还希望将相同数据的备份创建到对象存储，则可能需要使用<block ref="8ee3c78b4d982dfd78e6418c49156204" category="inline-link-rx"></block>，以便您可以使用单个服务来管理数据保护需求。</block>
   <block id="2feeca48692986e9cc471ec61f847fca" category="paragraph">NetApp 以多种方式为 NetApp Console 及其云服务提供支持。全天候 24x7 提供广泛的免费自助服务选项，例如知识库 (KB) 文章和社区论坛。您的支持注册包括通过 Web 票务系统获得远程技术支持。</block>
   <block id="317cbd2c4fdbfd06a6c66bcd3f57d7ad" category="paragraph">有关云提供商文件服务、其基础架构或使用该服务的任何解决方案的技术支持，请参见该产品的文档。</block>
   <block id="359d8b16e442ffaa72e03c95fcd60448" category="list-text"><block ref="359d8b16e442ffaa72e03c95fcd60448" category="inline-link-macro-rx"></block></block>
@@ -371,11 +359,7 @@
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
   <block id="56ed5396ea479b4ed31e75f97a4377c7" category="paragraph">该 NetApp Console 建立在增强和重组的 BlueXP 基础之上，提供跨本地和云环境的企业级 NetApp 存储和 NetApp Data Services 的集中管理，提供实时洞察、更快的工作流程以及高度安全且合规的简化管理。</block>
   <block id="79964b441fca8822ab19b6baa88e278c" category="paragraph">有关更改的详细信息，请参见 <block ref="b78e17cf58c4e309929c8d6a69594c7d" category="inline-link-macro-rx"></block>。</block>
-  <block id="792473ac08ba1d84d09bda502700cb0c" category="inline-image-macro">显示快照策略、源卷、从快照策略创建的快照副本，然后根据备份策略将这些快照副本复制到目标卷的图示，该策略指定使用"daily"和"weekly"标签复制快照副本。</block>
-  <block id="b58558e4b87bbbbcf3ed5075994b12ff" category="paragraph"><block ref="b58558e4b87bbbbcf3ed5075994b12ff" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8b6b78cd1bb83bad974b3603f73eb784" category="paragraph">NetApp Console 在企业级别跨本地和云环境提供 NetApp 存储和数据服务的集中管理。访问和使用 NetApp 数据服务需要 Console。作为管理界面，它使您能够从一个界面管理多个存储资源。Console 管理员可以控制企业内所有系统对存储和服务的访问。</block>
   <block id="bdb2d3899da6b930cee3298f5d2ff27e" category="list-text">本地 ONTAP 集群</block>
-  <block id="ef5c77728394babb7a239ba936c1c170" category="paragraph">NetApp Backup and Recovery 不支持 NetApp Replication 中可用的以下功能：</block>
   <block id="a89fd6d44f5c703629f123c702cee3ce" category="summary">查看有关 NetApp Replication 的常见问题，包括支持的配置以及如何解决常见问题。</block>
   <block id="241064fdb3668edab39d563b99a082ae" category="doc">NetApp Replication 常见问题解答</block>
   <block id="ad887e05c9bfed86a937c456b4221cfc" category="paragraph">此常见问题解答回答了有关 NetApp Replication 的常见问题。它侧重于在设置、管理和排查 ONTAP 系统、Cloud Volumes ONTAP 和 Amazon FSx for ONTAP 之间的复制关系时有用的概念、术语和行为。</block>
@@ -435,4 +419,19 @@
   <block id="b0eb6ed488c79bd6acace4af9e187976" category="list-text">如果本地 ONTAP 集群是关系的一部分，请使用 Direct Connect 或 VPN 连接确保本地网络与 AWS VPC 之间的连接。</block>
   <block id="349392d09ab3591a720b65ca5741db0f" category="paragraph">其余步骤提供了如何在 Cloud Volumes ONTAP 或本地 ONTAP 集群之间创建同步关系的示例。</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常见问题解答</block>
+  <block id="503b362ac6506f78efa5bd226faa4919" category="summary">与镜像策略不同，备份 SnapVault 策略将特定的快照副本复制到目标卷。如果要使用自己的策略而不是默认策略，请务必了解备份策略的工作原理。</block>
+  <block id="d6d7630532c77e4813d493b417cef99a" category="paragraph">备份策略包括指定将哪些标记的快照副本复制到目标卷以及保留多少个副本的规则。备份策略中定义的标签必须与快照策略中定义的一个或多个标签匹配。否则，系统无法复制任何快照副本。</block>
+  <block id="b8b03d344ac3bb1155617195cbd5f7d8" category="paragraph">例如，包含 "daily" 和 "weekly" 标签的备份策略会导致复制仅包含这些标签的快照副本。不会复制其他快照副本，如下图所示：</block>
+  <block id="28849005056144667c81e2af798c6d07" category="inline-image-macro">图示显示了快照策略、源卷、从快照策略创建的快照副本，然后根据备份策略将这些快照副本复制到目标卷，该策略指定了具有"每日"和"每周"标签的快照副本的复制。</block>
+  <block id="45cc286c9355e4abc2c9be952a8c97a7" category="paragraph"><block ref="45cc286c9355e4abc2c9be952a8c97a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6730a368a90359b748b9506a24090dcd" category="paragraph">您可以轻松地将默认备份策略与默认快照策略一起使用。默认备份策略复制每日和每周快照副本；它保留 7 个每日和 52 个每周快照副本。</block>
+  <block id="60b791fd2a13d0d094061b6bfd2e6a11" category="paragraph">控制台在企业级层面跨本地和云环境提供 NetApp 存储和数据服务的集中管理。访问和使用 NetApp 数据服务需要控制台 (Console)。作为管理界面，它使您能够从一个界面管理多个存储资源。控制台管理员可以控制企业内所有系统对存储和服务的访问。</block>
+  <block id="91ff0e8f460fae8d1cea7fdb919ae05f" category="paragraph">您无需许可证或订阅即可开始使用控制台。仅当需要在云中部署控制台代理以确保与存储系统或 NetApp 数据服务的连接时，才会产生费用。但是，从控制台访问的某些 NetApp 数据服务是基于许可证或订阅的。</block>
+  <block id="731235c7b5ea2be2f006c0b84364e301" category="list-text">ONTAP 存储系统之间的高效块级复制快速高效，具有用于灾难恢复和备份的精细恢复点。</block>
+  <block id="ba4ae9205f3761cd43d2d45b5d55d5ed" category="paragraph">NetApp Replication 使用 SnapMirror 和 SnapVault 技术简化了不同 ONTAP 系统上的卷之间的数据复制。要配置复制，只需标识源卷和目标卷，然后选择复制策略和计划。</block>
+  <block id="aad2bd8348f5732cffc2e60068e4a595" category="paragraph"><block ref="709606162a6deb57a707701740dbac7d" category="inline-link-macro-rx"></block> 使您能够在单独的 ONTAP 系统上的卷之间复制数据，同时还可以将相同的数据备份到对象存储。如果要在单个服务中同时管理相同 ONTAP 数据的复制和备份到对象保护，请考虑使用 NetApp Backup and Recovery。</block>
+  <block id="6d242150b811948c46b40ce2e5aa8968" category="paragraph">NetApp Replication 支持以下在 Backup and Recovery 中不可用的功能。</block>
+  <block id="3f3dcd61b391fa4750b25ad012b7cfc6" category="list-text">Backup and Recovery 当前不支持将数据复制到 FSx for ONTAP 系统或从 FSx for ONTAP 系统复制数据。</block>
+  <block id="f61da899badda17c43e8e5da775d7511" category="list-text">Backup and Recovery 不支持创建卷的一次性复制。</block>
+  <block id="2601f42c01172c0b06c8546b71254630" category="paragraph">此外，在 Replication 中更容易配置级联关系。如果需要上述任何功能，请使用 NetApp Replication。</block>
 </blocks>
