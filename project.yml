@@ -37,6 +37,8 @@ sidebar:
       url: "/concept-backup-policies.html"
   - title: 知识和支持
     entries:
+    - title: 常见问题解答
+      url: "/faq-replication.html"
     - title: 注册以获得支持
       url: "/task-support-registration.html"
     - title: 获取帮助

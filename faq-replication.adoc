@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: faq-replication.html 
+keywords: faq, frequently asked questions, snapmirror, snapvault, replication policies, backup policies, data protection, cloud volumes ontap, amazon fsx, ontap, mirror, backup, cascade, fanout 
+summary: 查看有关 NetApp Replication 的常见问题，包括支持的配置以及如何解决常见问题。 
+---
+= NetApp Replication 常见问题解答
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+此常见问题解答回答了有关 NetApp Replication 的常见问题。它侧重于在设置、管理和排查 ONTAP 系统、Cloud Volumes ONTAP 和 Amazon FSx for ONTAP 之间的复制关系时有用的概念、术语和行为。
+
+
+
+[[general-concepts]]
+== 一般概念
+
+.Replication 支持哪些源和目标系统组合？
+复制支持 Amazon FSx for ONTAP、Cloud Volumes ONTAP 和本地 ONTAP。您可以在这三个系统中的任意两个之间配置复制。
+
+.Replication 支持哪些数据保护配置？
+复制支持三种配置：
+
+* *简单*：从卷 A 复制到卷 B。
+* *扇出*：从卷 A 复制到多个目标。
+* *级联*：从卷 A 复制到卷 B，然后从卷 B 复制到卷 C。
+
+
+.第一次复制传输与后续传输期间会发生什么？
+基线传输包括源数据的完整副本。后续传输仅包含源数据的差异（增量）副本。
+
+.使用 Replication 是否需要任何费用？
+NetApp 不会向您收取使用 Replication 本身的费用，但您应该咨询您的云提供商，了解适用的数据入口和出口费用。当您部署 Console 代理以连接到您的存储系统或数据服务时，NetApp Console 会产生费用；从 Console 访问的一些其他 NetApp 数据服务已获得许可或基于订阅。
+
+.是否需要许可证或订阅才能使用 Replication？
+您不需要许可证或订阅即可开始使用 Console 或 Replication。对于本地 ONTAP 配置，必须安装处于活动状态的 SnapMirror 许可证。
+
+
+
+[[replication-policies]]
+== 复制策略
+
+.镜像策略和备份策略有什么区别？
+复制策略有三种类型：
+
+* *Mirror*：将新创建的快照副本复制到目标卷，用于灾难恢复准备或一次性数据复制；您可以随时激活目标卷以用于数据访问。
+* *备份*：将特定标签的快照副本复制到目标卷，且通常保留时间长于源卷，可用于恢复损坏或丢失的数据以及合规/治理目的。
+* *Mirror and Backup*：结合了灾难恢复和长期保留，是每个系统包含的默认策略。
+
+
+如果默认策略不满足您的需求，则可以使用 System Manager 创建自定义策略。
+
+.为什么我的备份策略不复制任何快照副本？
+备份策略仅复制其标签与源卷的快照策略中定义的标签匹配的快照副本。如果自定义备份策略中的标签与快照策略中的任何标签都不匹配，则系统无法复制任何快照副本。例如，标签为"daily"和"weekly"的备份策略仅复制具有这些标签的快照副本。
+
+.如果使用默认策略，默认快照保留设置是什么？
+默认快照策略创建每小时、每天和每周的快照副本，保留每小时六个、每天两个和每周两个副本。默认备份策略复制每日和每周快照副本；它保留 7 个每日和 52 个每周快照副本。
+
+
+
+[[setting-up-replication]]
+== 设置复制
+
+.设置数据复制之前需要检查哪些内容？
+在复制数据之前，请确认以下内容：
+
+* 源和目标系统已存在（或创建它们）。
+* 验证源卷和目标卷是否正在运行兼容的 ONTAP 版本；请参阅 link:https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["兼容的 ONTAP 版本"^]。
+* 请确保您已满足 link:task-replicating-data.html["数据复制要求"] 的系统特定要求。
+
+
+.要使集群对等在集群间 LIF 中正常工作，需要满足哪些条件？
+应配置集群间网络，以便集群对等点具有成对的全网状连接，这意味着集群对等关系中的每对集群在其所有集群间 LIF 之间都具有连接性。这适用于具有多个 LIF 的 ONTAP 集群是源或目标时。
+
+.我可以创建自定义复制计划吗？
+设置复制时，有几个默认计划可用。如果需要不同的计划，则必须使用 System Manager 在目标集群上创建新计划。
+
+
+
+[[managing-replication-relationships]]
+== 管理复制关系
+
+.如果复制关系显示空闲状态和未初始化的镜像状态，这意味着什么？
+当目标系统发生故障，然后恢复联机时，可能会发生这种情况。必须使用 System Manager 或 CLI 从目标系统初始化关系，才能根据定义的计划恢复数据复制。
+
+.中断、重新同步和反向重新同步操作之间有什么区别？
+这些操作具有不同的效果：
+
+* *Break*：断开源卷和目标卷之间的关系，并激活目标卷以供数据访问。通常在源卷因损坏、删除或脱机状态而无法提供数据时使用。
+* *重新同步*：重新建立断开的关系并按计划恢复复制；目标卷上的内容将被源卷的内容覆盖。
+* *Reverse Resync*：反转源卷和目标卷的角色，用目标卷的内容覆盖原始源卷的内容。在最后一次复制到脱机期间写入原始源卷的任何数据都不会保留。
+
+
+.删除复制关系后会发生什么？
+删除源卷和目标卷之间的数据保护关系会结束卷之间的数据复制，从目标站点删除 SnapMirror 关系，并从源站点释放该关系。它还会中断 SnapMirror 关系，暂时将目标卷设为读/写操作的主站点，以便在删除复制后可以独立使用目标卷。
+
+.为什么我应该限制最大传输速率，而不是让它不受限制？
+无限制的传输速率可能会对其他应用程序的性能和您的互联网性能产生负面影响。设置复制时，应限制最大传输速率（以 MB/秒为单位），稍后可以从"复制状态"页面对其进行编辑。

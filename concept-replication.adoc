@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-replication.html 
-keywords: ontap, cluster, discover, manage, BlueXP, bluexp,hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, disaster recovery, DR, archive, archiving, retention, netapp replication 
+keywords: ontap, cluster, discover, manage, BlueXP, bluexp, hybrid cloud, replication policy, policy, replication, replicating, snapmirror, snapvault, data replication, fanout, cascade, source, destination, disaster recovery, DR, archive, archiving, retention, netapp replication 
 summary: NetApp SnapMirror通过 LAN 或 WAN 高速复制数据，因此您可以在虚拟和传统环境中获得高数据可用性和快速数据复制。当您将数据复制到NetApp存储系统并不断更新辅助数据时，您的数据将保持最新状态并在您需要时保持可用。不需要外部复制服务器。 
 ---
 = 了解NetApp Replication
@@ -23,7 +23,7 @@ NetApp SnapMirror通过 LAN 或 WAN 高速复制数据，因此您可以在虚�
 
 可以通过NetApp Console访问NetApp Replication 。
 
-NetApp Console提供企业级跨本地和云环境的NetApp存储和数据服务的集中管理。需要控制台才能访问和使用NetApp数据服务。作为管理界面，它使您能够从一个界面管理许多存储资源。控制台管理员可以控制企业内所有系统的存储和服务的访问。
+NetApp Console 在企业级别跨本地和云环境提供 NetApp 存储和数据服务的集中管理。访问和使用 NetApp 数据服务需要 Console。作为管理界面，它使您能够从一个界面管理多个存储资源。Console 管理员可以控制企业内所有系统对存储和服务的访问。
 
 您不需要许可证或订阅即可开始使用NetApp Console，并且只有当您需要在云中部署控制台代理以确保与存储系统或NetApp数据服务的连接时才需要付费。但是，一些可从控制台访问的NetApp数据服务是需要许可或基于订阅的。
 
@@ -61,15 +61,15 @@ NetApp Replication支持以下类型的系统之间的数据复制。
 | Cloud Volumes ONTAP  a| 
 * 适用于ONTAP 的Amazon FSx
 * Cloud Volumes ONTAP
-* 本地ONTAP集群
+* 本地 ONTAP 集群
 
 
 
 
-| 本地ONTAP集群  a| 
+| 本地 ONTAP 集群  a| 
 * 适用于ONTAP 的Amazon FSx
 * Cloud Volumes ONTAP
-* 本地ONTAP集群
+* 本地 ONTAP 集群
 
 
 
@@ -77,7 +77,7 @@ NetApp Replication支持以下类型的系统之间的数据复制。
 | 适用于ONTAP 的Amazon FSx  a| 
 * 适用于ONTAP 的Amazon FSx
 * Cloud Volumes ONTAP
-* 本地ONTAP集群
+* 本地 ONTAP 集群
 
 
 |===
@@ -112,7 +112,7 @@ NetApp Replication支持简单、扇出和级联数据保护配置：
 
 从 NetApp Console 代理 3.9.31 版本开始，NetApp Backup and Recovery 使您能够使用 SnapMirror 和 SnapVault 技术在不同 ONTAP 系统上的卷之间复制数据。因此，如果您计划将数据复制到其他 ONTAP 系统，并且还希望将相同数据的备份创建到对象存储，则可能需要使用 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["NetApp Backup and Recovery"^]，以便您可以使用单个服务来管理数据保护需求。
 
-目前，以下功能仅在NetApp Replication中受支持 - 使用NetApp Backup and Recovery的复制功能时不受支持。
+NetApp Backup and Recovery 不支持 NetApp Replication 中可用的以下功能：
 
 * 不支持从卷 A 到卷 B，再从卷 B 到卷 C 的级联配置。
 * 不支持将数据复制到 FSx for ONTAP 系统或从 FSx for ONTAP系统复制数据。
